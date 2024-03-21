@@ -31,8 +31,8 @@ public:
 
 int main()
 {
-    agendaTelefonica contato1("João", "123456789", "joao@GMAIL.com", "APPLE");
-    agendaTelefonica contato2("Maria", "987654321", "maria@GMAILe.com", "SAMSUNG");
+    agendaTelefonica contato1("Marcelo", "61984761069", "celo@GMAIL.com", "APPLE");
+    agendaTelefonica contato2("Isabela", "61982582527", "isa@GMAILe.com", "SAMSUNG");
 
     cout << "Contato 1:" << endl;
     contato1.imprimirDados();
