@@ -1,0 +1,104 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vectro>
+
+using namespace std;
+
+class Carro
+{
+private:
+    string cor;
+    string marca;
+    int peso_do_veiculo;
+    int ano;
+
+public:
+    
+    Carro(string _cor, string _marca, int _peso_do_veiculo, int _ano) 
+    {
+        cor = _cor;
+        marca = _marca;
+        peso_do_veiculo = _peso_do_veiculo;
+        ano = _ano;
+    }
+
+    
+    string getCor() { return cor; }
+    string getMarca() { return marca; }
+    int getPeso_do_veiculo() { return peso_do_veiculo_; }
+    int getAno() { return ano; }
+};
+
+class cadastroCarros
+{
+      private:
+              vector<Carro> carros;
+
+      public:
+             
+             void adicionarCarro()
+             {
+                  string cor, marca;
+                  int peso_do_veiculo, ano;
+                  
+                  cout << " Digite a cor do carro :";
+                  cin.ignore();
+                  getline(cin, cor);
+                  cout<< " Digite a marca do carro :";
+                  getline(cin, marca);
+                  cout<< " Digite o peso do veiculo :";
+                  cin>> peso_do_veiculo;
+                  cout<< " Digite o ano do veiculo :";
+                  cin.ignore();
+                  cin>> ano;
+                  
+                  carros.push_back(Carro(cor, marca, peso_do_veiculo, ano));
+                  }
+                  
+    
+    void listarCarros()
+    {
+        cout << "Veiculos cadastrados" << endl;
+        for (size_t i = 0; i < alunos.size(); ++i) {
+            cout << "Marca: " << alunos[i].getNome() << endl;
+            cout << "Cor: " << alunos[i].getMatricula() << endl;
+            cout << "Peso do veiculo: " << alunos[i].getIdade() << endl;
+            cout << "Ano: " << alunos[i].getSemestre() << endl;
+            cout << endl;
+        }
+    }
+};
+
+int main()
+{
+    castroCarros cadastro;
+
+    int opcao;
+
+    do {
+        cout << "Menu:" << endl;
+        cout << "1. Adicionar carros " << endl;
+        cout << "2. Listar carros " << endl;
+        cout << "3. Sair" << endl;
+        cout << "Escolha uma opcao: ";
+        cin >> opcao;
+
+        switch (opcao) {
+            case 1:
+                cadastro.adicionarCarro();
+                break;
+            case 2:
+                cadastro.listarCarros();
+                break;
+            case 3:
+                cout << "Encerrando o programa." << endl;
+                break;
+            default:
+                cout << "Opcao invalida. Tente novamente." << endl;
+        }
+
+    } while (opcao != 3);
+
+    return 0;
+}
